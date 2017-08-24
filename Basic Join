@@ -1,4 +1,16 @@
 select CITY.NAME
 from CITY, COUNTRY
 where CITY.COUNTRYCODE = COUNTRY.CODE and COUNTRY.CONTINENT = 'Africa'
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+select CONTINENT, FLOOR(AVG(CITY.POPULATION))
+from COUNTRY join CITY
+on COUNTRY.CODE = CITY.COUNTRYCODE
+group by COUNTRY.CONTINENT
+--------------------------------------------------------------------------------
+select
+        case when Grade < 8 then NULL
+        else Name
+        end, Grade, Marks
+
+    from Students join Grades on Marks >= Min_Mark and Marks <= Max_Mark
+    order by Grade DESC, Name ASC
