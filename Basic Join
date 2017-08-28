@@ -14,3 +14,4 @@ select
 
     from Students join Grades on Marks >= Min_Mark and Marks <= Max_Mark
     order by Grade DESC, Name ASC
+--------------------------------------------------------------------------------
